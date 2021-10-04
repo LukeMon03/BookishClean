@@ -1,0 +1,42 @@
+﻿@using Bookish.Net;
+
+
+@model IEnumerable<Book>
+
+@{
+    ViewBag.Title = "Catalogue";
+
+
+}
+
+<h2>Catalogue</h2>
+
+@using (Html.BeginForm("Catalogue", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.Label("SearchText", "Search for:")
+        @Html.TextBox("SearchText")
+        <input type="submit" value="Search" />
+    </fieldset>
+}
+<table style="border:1px solid black; width: 100%">
+    <tr style="border:1px solid black;background-color:aliceblue">
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+    </tr>
+    @foreach (Book book in Model)
+    {
+
+        <tr style="background-color:powderblue;padding:10px;border:groove">
+            <td>@book.BookName</td>
+            <td>@book.Author</td>
+            <td>@book.ISBN</td>
+
+        </tr>
+    }
+
+</table>
+
+
+

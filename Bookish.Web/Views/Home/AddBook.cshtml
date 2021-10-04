@@ -1,0 +1,29 @@
+﻿@using Bookish.Net;
+
+
+@model IEnumerable<Book>
+
+@{
+    ViewBag.Title = "AddBook";
+}
+
+<h2>AddBook</h2>
+
+@using (Html.BeginForm("AddBook", "Home", FormMethod.Post))
+{
+<fieldset>
+    @Html.Label("BookName", "Enter Book Name Please")
+    <br>
+    @Html.TextBox("BookName")
+    <br>
+    @Html.Label("ISBN", "Enter The ISBN Please")
+    <br>
+    @Html.TextBox("ISBN")
+    <br>
+    @Html.Label("Author", "Enter Author Name Please")
+    <br>
+    @Html.TextBox("Author")
+    <input type="submit" value="Add" />
+</fieldset>
+}
+
